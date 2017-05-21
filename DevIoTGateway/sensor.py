@@ -1,7 +1,7 @@
 __author__ = 'tingxxu'
-from sproperty import SProperty
-from saction import SAction
-from ssetting import SSetting
+from .sproperty import SProperty
+from .saction import SAction
+from .ssetting import SSetting
 
 
 class Sensor:

@@ -5,7 +5,7 @@ import json
 import time
 import sys
 
-import httplib
+import http.client
 
 
 class Register(threading.Thread):
@@ -47,13 +47,13 @@ class Register(threading.Thread):
 
         while True:
             try:
-                conn = httplib.HTTPConnection(self.__api_address__)
+                conn = http.client.HTTPConnection(self.__api_address__)
                 conn.request("POST", api, json_data, {'Content-Type': 'application/json'})
                 response = conn.getresponse()
             except IOError as e:
                 print(e)
             except:
-                print("--RunRegisterThread error:", sys.exc_info()[1])
+                print(("--RunRegisterThread error:", sys.exc_info()[1]))
             time.sleep(60)
 
     @staticmethod

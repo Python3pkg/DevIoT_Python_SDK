@@ -1,5 +1,5 @@
 __author__ = 'tingxxu'
-from ssetting import SSetting
+from .ssetting import SSetting
 
 
 class SAction:

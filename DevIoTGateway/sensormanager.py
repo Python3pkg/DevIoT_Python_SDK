@@ -1,6 +1,6 @@
 __author__ = 'tingxxu'
-from singleton import Singleton
-from sensor import Sensor, SProperty, SAction, SSetting
+from .singleton import Singleton
+from .sensor import Sensor, SProperty, SAction, SSetting
 import sys
 import json
 
@@ -78,7 +78,7 @@ class SensorManager(Singleton):
                 if len(sensor.__properties__) > 0:
                     data[sensor_id] = self.__get_sensor_value_expression(sensor)
         except:
-            print("sensor manager get_sensors_data ", sys.exc_info()[1])
+            print(("sensor manager get_sensors_data ", sys.exc_info()[1]))
         return json.dumps(data)
 
     def get_all_expression(self):
@@ -133,7 +133,7 @@ class SensorManager(Singleton):
                     if founded is False:
                         raise ValueError("Does not support {0}".format(kind))
             else:
-                print("Bad Command from DevIot: %s" % message)
+                print(("Bad Command from DevIot: %s" % message))
         except:
             res = "command format error: %s" % message
             print(res)

@@ -1,9 +1,9 @@
 _author__ = 'tingxxu'
 
-from mqclient import MQClient
-from register import Register
-from singleton import Singleton
-from sensormanager import manager
+from .mqclient import MQClient
+from .register import Register
+from .singleton import Singleton
+from .sensormanager import manager
 
 
 class Gateway(Singleton):

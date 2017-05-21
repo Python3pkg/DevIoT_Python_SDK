@@ -7,12 +7,12 @@ from DevIoTGateway.config import config
 
 # action name will be 'on' or 'off'
 def trigger_alert_shanghai(sensor_id, action):
-    print("shanghai " + action.name)
+    print(("shanghai " + action.name))
 
 
 # action name will be 'on' or 'off'
 def pollution_callback(sensor_id, action):
-    print("action %s occur at %s " % (action.name, sensor_id))
+    print(("action %s occur at %s " % (action.name, sensor_id)))
 
 if __name__ == '__main__':
     app_name = config.get_string("appname", "test")
